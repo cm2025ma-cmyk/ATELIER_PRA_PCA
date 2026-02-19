@@ -231,27 +231,27 @@ Faites preuve de pédagogie et soyez clair dans vos explications et procedures d
 **Exercice 1 :**  
 Quels sont les composants dont la perte entraîne une perte de données ?  
   
-*..Répondez à cet exercice ici..*
+*..Les composants dont la perte de données est les deux PVCs pra data et backup, car c'est là que les données sont stockers...*
 
 **Exercice 2 :**  
 Expliquez nous pourquoi nous n'avons pas perdu les données lors de la supression du PVC pra-data  
   
-*..Répondez à cet exercice ici..*
+*..Car on possède une sauvegarde de la BDD dans le pra-backup,  pra-backup s'actualise toutes les minutes. ..*
 
 **Exercice 3 :**  
 Quels sont les RTO et RPO de cette solution ?  
   
-*..Répondez à cet exercice ici..*
+*..Le Recovery Time Objective dépend de la réactivité de l'administrateur car necessite une intervention manuel et RPO moins d'une minute car le script de sauvegarde sauvegarde toutes les minutes..*
 
 **Exercice 4 :**  
 Pourquoi cette solution (cet atelier) ne peux pas être utilisé dans un vrai environnement de production ? Que manque-t-il ?   
   
-*..Répondez à cet exercice ici..*
+*..Cette solution ne peut être utilisé dans un vrai environnement de production car si le serveur (pas juste le pod) tombe alors on perd le pra-data et pra-backup il sera donc impossible de récupéré les données...*
   
 **Exercice 5 :**  
 Proposez une archtecture plus robuste.   
   
-*..Répondez à cet exercice ici..*
+*..On peut imaginer sauvegarder le pra-backup ou pra-data sur une autre machine ou sur le cloud ex: AWS. Il faudrait aussi que cela soit sur un lieu différent pour evité en cas de catastrophe de tout perdre..*
 
 ---------------------------------------------------
 Séquence 6 : Ateliers  
