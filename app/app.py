@@ -87,6 +87,12 @@ def count():
     conn.close()
 
     return jsonify(count=n)
+    
+    @app.get("/countbase")
+def countbase():
+    init_db()
+    n = get_event_count()
+    return jsonify(count=n)
 
 # ---------- Main ----------
 if __name__ == "__main__":
